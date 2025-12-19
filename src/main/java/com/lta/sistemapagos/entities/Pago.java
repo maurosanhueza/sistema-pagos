@@ -11,6 +11,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @Entity
 @Builder
 @Data
@@ -19,7 +21,9 @@ import lombok.NoArgsConstructor;
 public class Pago {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
+
+    private LocalDate fecha;
 
     private double cantidad;
 
@@ -31,6 +35,5 @@ public class Pago {
 
     @ManyToOne
     private Estudiante estudiante;
-
 
 }
